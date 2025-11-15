@@ -1,10 +1,3 @@
-Here is the **completed README**, fully corrected, expanded, and updated for your use of **UV (the ultra-fast Python package & environment manager)** and **pyproject.toml**.
-I kept your original structure and filled in all missing/unfinished sections.
-
-You can copy–paste this directly into your repository.
-
----
-
 # Diabetes Prediction
 
 ## Table of Contents
@@ -40,50 +33,48 @@ diabetes-prediction/
 ├── data/
 │   └── diabetes.csv
 │
-├── notebooks/
-│   └── exploratory_analysis.ipynb
+├── notebook.ipynb
+│  
 │
-├── src/
-│   ├── data_preprocessing.py
-│   ├── train.py
-│   ├── predict.py
-│   ├── utils.py
+├── train.py
+├── predict.py
+│── utils.py
 │
-├── models/
-│   └── model.pkl   (or model_final.bin depending on your workflow)
+├── model_final.bin 
+│    
 │
-├── pyproject.toml   # Project dependencies & UV configuration
+├── pyproject.toml  
 └── README.md
 ```
 
-If your actual structure differs slightly, adjust as needed.
+
 
 ---
 
 ## 3. Dataset
 
-This project uses the **Pima Indians Diabetes Dataset**, a widely used dataset for binary classification prediction tasks.
+This project uses the **Diabetes prediction dataset** that can be found here [data](https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset).
 
 ### **Features include:**
 
-* Pregnancies
-* Glucose
-* BloodPressure
-* SkinThickness
-* Insulin
-* BMI
-* DiabetesPedigreeFunction
-* Age
-* Outcome (target: 1 = diabetes, 0 = no diabetes)
+* gender
+* age
+* hypertension
+* heart_disease
+* smoking_history
+* bmi
+* HbA1c_level
+* blood_glucose_level
+* diabetes (target: 1 = diabetes, 0 = no diabetes)
 
 ### **Preprocessing performed:**
 
 * Handling of missing values
 * Normalization / standardization of features
 * Train–test splitting
-* Optional feature selection (depending on your implementation)
 
-If you later switch to a custom dataset, update this section accordingly.
+
+
 
 ---
 
@@ -94,19 +85,18 @@ If you later switch to a custom dataset, update this section accordingly.
    * Missing or zero-values are handled
    * Features are scaled
    * Train–test split is performed
-   * Preprocessing utilities live in `data_preprocessing.py` and `utils.py`
+   * Preprocessing utilities live in `train.py` and `utils.py`
 
 2. **Model Training (`train.py`)**
 
    * Loads the dataset
-   * Trains a classification model (e.g., Random Forest, Logistic Regression)
-   * Evaluates accuracy
+   * Trains a classification model (Gradient Boosting)
    * Saves the model artifact in `models/`
 
 3. **Model Saving**
 
-   * Model is saved using `pickle` or `joblib`
-   * Stored inside the `models/` directory
+   * Model is saved using `pickle` 
+   * Stored inside the main directory
 
 4. **Prediction (`predict.py`)**
 
@@ -119,7 +109,7 @@ If you later switch to a custom dataset, update this section accordingly.
 ## 5. Installation
 
 This project uses **UV**, a modern, fast Python package manager that replaces `pip`, `venv`, and `pyenv` with a single tool.
-Your dependencies are stored in `pyproject.toml`.
+The dependencies are stored in `pyproject.toml`.
 
 ### **Prerequisites**
 
@@ -198,63 +188,47 @@ uv sync
 ### **Train the model**
 
 ```bash
-uv run src/train.py
+python train.py
 ```
 
 ### **Run predictions**
 
 ```bash
-uv run src/predict.py
-```
-
-Depending on your implementation, this script may:
-
-* ask for manual input
-* run a demonstration prediction
-* load test samples
-
-### **Run tests** (if applicable)
-
-```bash
-uv run src/test.py
+python predict.py
 ```
 
 ### **Open the Jupyter Notebook**
 
-```bash
-uv run jupyter notebook notebooks/exploratory_analysis.ipynb
-```
+
+run notebook.ipynb
+
 
 ---
 
 ## 7. Model Details
 
-* **Algorithm used:** (Random Forest / Logistic Regression / etc.)
-* **Input features:** 8 numerical medical markers
+* **Algorithm used:** (Random Forest / Logistic Regression / Decision Tree / Gradient Boosting)
+* **Input features:** 4 numerical / 4 categorical medical markers
 * **Output:** binary prediction (diabetic vs non-diabetic)
-* **Model file:** saved at `models/model.pkl` or `model_final.bin`
+* **Model file:** saved at `model_final.bin`
 
-You may expand this section with:
-
-* Hyperparameters
-* Cross-validation strategy
-* Feature importance
 
 ---
 
-## 8. Results & Evaluation
+## 8. Results & Evaluation (Gradient Boosting)
 
-Include your actual results from training:
 
-| Metric    | Value |
-| --------- | ----- |
-| Accuracy  | X.X%  |
-| Precision | X.X%  |
-| Recall    | X.X%  |
-| F1 Score  | X.X%  |
-| ROC-AUC   | X.X%  |
+Here's a polished and Markdown-friendly version of your metrics table, ideal for a README.md:
+## 📊 Model Performance Metrics
 
-(You can replace X.X with real values after running evaluation.)
+| Metric     | Value  |
+|------------|--------|
+| Accuracy   | 0.9078 |
+| Precision  | 0.4781 |
+| Recall     | 0.9200 |
+| F1 Score   | 0.6292 |
+| ROC-AUC    | 0.9796 |
+
 
 ---
 
