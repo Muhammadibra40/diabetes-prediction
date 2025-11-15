@@ -10,7 +10,7 @@ ENV PATH="/app/.venv/bin:$PATH"
 COPY ".python-version" "pyproject.toml" "uv.lock" ./
 RUN uv sync --locked
 
-COPY "predict.py" "model_final.bin" ./
+COPY "predict.py" "utils.py" "model_final.bin" ./
 
 EXPOSE 9696
 
