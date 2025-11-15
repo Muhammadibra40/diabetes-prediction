@@ -20,13 +20,13 @@
 
 Diabetes is a serious chronic disease affecting millions worldwide. Predicting who may develop diabetes can help in early detection and prevention, thereby reducing complications and healthcare costs.
 
-This project trains a machine learning model that predicts whether an individual likely has diabetes based on various health metrics such as **glucose level, BMI, age, blood pressure, insulin**, and more. The project demonstrates a complete ML workflow: preprocessing, model training, evaluation, and prediction.
+In this project 4 machine learning models twere trained to predict whether an individual likely has diabetes based on various health metrics such as **glucose level, BMI, age, blood pressure, insulin**, and the best model was chosen to be deployed. The project demonstrates a complete ML workflow: preprocessing, model training, evaluation, and prediction.
 
 ---
 
 ## 2. Project Structure
 
-Here is a high-level overview of the repository layout:
+A High-level overview of the repository layout:
 
 ```
 diabetes-prediction/
@@ -205,17 +205,17 @@ run notebook.ipynb
 
 ---
 
-## 7. Model Details
+## 7. Models Details
 
-* **Algorithm used:** (Random Forest / Logistic Regression / Decision Tree / Gradient Boosting)
+* **Algorithms used:** (Random Forest / Logistic Regression / Decision Tree / Gradient Boosting)
 * **Input features:** 4 numerical / 4 categorical medical markers
 * **Output:** binary prediction (diabetic vs non-diabetic)
-* **Model file:** saved at `model_final.bin`
+* **Chosen model file:** saved at `model_final.bin`
 
 
 ---
 
-## 8. Results & Evaluation (Gradient Boosting)
+## 8. Results & Evaluation of the final chosen model (Gradient Boosting)
 
 
 ## 📊 Model Performance Metrics
