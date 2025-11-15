@@ -1,15 +1,18 @@
 [project]
-name = "loan-approval-prediction"
+name = "diabetes-prediction"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "fastapi>=0.121.2",
     "imbalanced-learn>=0.14.0",
     "jupyter>=1.1.1",
     "matplotlib>=3.10.7",
     "pandas>=2.3.3",
+    "requests>=2.32.5",
     "scikit-learn>=1.7.2",
     "seaborn>=0.13.2",
+    "uvicorn>=0.38.0",
     "xgboost>=3.1.1",
 ]
